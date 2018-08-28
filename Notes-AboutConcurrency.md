@@ -14,6 +14,9 @@
 
 ## 响应式编程
 响应式编程最近成为了一个Buzzword，其实微软6年前就开始给.NET提供一个Reactive Extensions了。一开始要理解响应式编程有点困难，但是一旦理解了，你就会对它的强大功能爱不释手。简单来说，响应式编程把事件流看作数据流，不过数据流是从IEnumable中拉取的，而事件流是从IObservable推送给你的。为什么响应式编程可以实现并发呢？这是因为Rx做到线程不可知，每次事件触发，后续的处理会从线程池中任意取出一个线程来处理。且可以对事件设置窗口期和限流。举个例子，你可以用Rx来让搜索文本框进行延迟处理（而不用类似我很早的时候用个定时器来延迟了）。
+> Rx.net微软官方文档 https://docs.microsoft.com/zh-cn/previous-versions/dotnet/reactive-extensions/hh242975(v%3dvs.103)
+
+> Rx官网 http://reactivex.io/
 
 **Keyword:** *ReactiveExtentions/System.Reactive/响应式/可观察集合*
 
