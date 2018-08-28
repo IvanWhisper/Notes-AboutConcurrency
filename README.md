@@ -14,15 +14,19 @@
 
 ## 响应式编程
 响应式编程最近成为了一个Buzzword，其实微软6年前就开始给.NET提供一个Reactive Extensions了。一开始要理解响应式编程有点困难，但是一旦理解了，你就会对它的强大功能爱不释手。简单来说，响应式编程把事件流看作数据流，不过数据流是从IEnumable中拉取的，而事件流是从IObservable推送给你的。为什么响应式编程可以实现并发呢？这是因为Rx做到线程不可知，每次事件触发，后续的处理会从线程池中任意取出一个线程来处理。且可以对事件设置窗口期和限流。举个例子，你可以用Rx来让搜索文本框进行延迟处理（而不用类似我很早的时候用个定时器来延迟了）。
+
 > Rx.net微软官方文档 https://docs.microsoft.com/zh-cn/previous-versions/dotnet/reactive-extensions/hh242975(v%3dvs.103)
 
 > Rx官网 http://reactivex.io/
+
 
 **Keyword:** *ReactiveExtentions/System.Reactive/响应式/可观察集合*
 
 ## 数据流编程
 数据流（DataFlow）编程可能大家就更陌生了，不过还是有些常用场景可以使用数据流来解决。数据流其实是在任务并行库（TPL）上衍生出来的一套处理数据的扩展（也结合了异步的特性），TPL也是处理并行编程中任务并行和数据并行的基础库。望文生义，TPL DataFlow就是对数据进行一连串处理，首先为这样的处理定义一套网格（mesh），网格中可以定义分叉（fork）、连接（join）、循环（loop）。数据流入这样的处理网格就能够并行的被处理。你可以认为网格是一种升级版的管道，实际上很多时候就是被当作管道来使用。使用场景可以是“分析文本文件中词频”，也可以是“处理生产者/消费者问题”。
+
 > TPLDataFlow官方文档 https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/dataflow-task-parallel-library
+
 **Keyword:** *TPL DataFlow/数据流*
 
 ## Actor模型
