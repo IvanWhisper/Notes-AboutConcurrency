@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes-AboutConcurrency", "Notes-AboutConcurrency\Notes-AboutConcurrency.csproj", "{4EFD6EA3-7CC3-496A-8A8C-3B416880EA4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "异步编程", "异步编程", "{901B4B62-860B-4983-9B30-311FCADDC3E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "异步编程Future", "异步编程Future\异步编程Future.csproj", "{49BFD70C-1F07-4FC5-96E2-270F9F858EC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "并行编程", "并行编程", "{D249A801-948C-4F0E-A90D-EB0CAF2A34DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "并行编程Parallel", "并行编程Parallel\并行编程Parallel.csproj", "{96CD487F-199F-46D0-91B9-408CF8E13F93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "响应式编程", "响应式编程", "{DE24CC9B-225C-4ED2-A1C8-5E8F306D2AEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RX", "RX\RX.csproj", "{59BFCA3A-B27E-4871-9948-FA1A7AE35A1D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "数据流编程", "数据流编程", "{A661D13B-B5F9-4D56-ADDE-8BF5866FCB7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "数据流编程TPLDataFlow", "数据流编程TPLDataFlow\数据流编程TPLDataFlow.csproj", "{5F6EBE44-B198-44EA-94FA-4A9C36159FA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Actor模型", "Actor模型", "{44AF1B9B-81AA-4FF9-B33D-9298FEA87E61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actor模型编程", "Actor模型编程\Actor模型编程.csproj", "{44297B94-59B7-4C35-8428-47E344FA2FE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EFD6EA3-7CC3-496A-8A8C-3B416880EA4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EFD6EA3-7CC3-496A-8A8C-3B416880EA4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EFD6EA3-7CC3-496A-8A8C-3B416880EA4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EFD6EA3-7CC3-496A-8A8C-3B416880EA4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49BFD70C-1F07-4FC5-96E2-270F9F858EC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49BFD70C-1F07-4FC5-96E2-270F9F858EC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49BFD70C-1F07-4FC5-96E2-270F9F858EC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49BFD70C-1F07-4FC5-96E2-270F9F858EC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96CD487F-199F-46D0-91B9-408CF8E13F93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96CD487F-199F-46D0-91B9-408CF8E13F93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96CD487F-199F-46D0-91B9-408CF8E13F93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96CD487F-199F-46D0-91B9-408CF8E13F93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59BFCA3A-B27E-4871-9948-FA1A7AE35A1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59BFCA3A-B27E-4871-9948-FA1A7AE35A1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59BFCA3A-B27E-4871-9948-FA1A7AE35A1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59BFCA3A-B27E-4871-9948-FA1A7AE35A1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F6EBE44-B198-44EA-94FA-4A9C36159FA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F6EBE44-B198-44EA-94FA-4A9C36159FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F6EBE44-B198-44EA-94FA-4A9C36159FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F6EBE44-B198-44EA-94FA-4A9C36159FA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44297B94-59B7-4C35-8428-47E344FA2FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44297B94-59B7-4C35-8428-47E344FA2FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44297B94-59B7-4C35-8428-47E344FA2FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44297B94-59B7-4C35-8428-47E344FA2FE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{49BFD70C-1F07-4FC5-96E2-270F9F858EC8} = {901B4B62-860B-4983-9B30-311FCADDC3E2}
+		{96CD487F-199F-46D0-91B9-408CF8E13F93} = {D249A801-948C-4F0E-A90D-EB0CAF2A34DE}
+		{59BFCA3A-B27E-4871-9948-FA1A7AE35A1D} = {DE24CC9B-225C-4ED2-A1C8-5E8F306D2AEF}
+		{5F6EBE44-B198-44EA-94FA-4A9C36159FA7} = {A661D13B-B5F9-4D56-ADDE-8BF5866FCB7E}
+		{44297B94-59B7-4C35-8428-47E344FA2FE0} = {44AF1B9B-81AA-4FF9-B33D-9298FEA87E61}
+	EndGlobalSection
+EndGlobal
