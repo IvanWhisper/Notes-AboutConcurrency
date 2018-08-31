@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MathNet.Numerics.Statistics;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
+
 namespace RX
 {
     class Program
@@ -17,14 +19,74 @@ namespace RX
         static void Main(string[] args)
         {
 
-
-
-            DifferenceBetweenSubscribeOnAndObserveOn();
+            ScanAndWeigh();
+            //EventTostream();
+            //DifferenceBetweenSubscribeOnAndObserveOn();
             //TestWatcher();
 
             Console.ReadLine();
 
         }
+        public static void ScanAndWeigh()
+        {
+            
+            Weight wt = new Weight();
+            var wtreport = Observable.FromEvent<Queue<double>>(handler => wt.Weigh += handler, handler => wt.Weigh -= handler);
+            wtreport
+                //转化器
+                .Select(e=>Tuple.Create(e, Statistics.Variance(e)))
+                //过滤器
+                .Where(e=>e.Item2<0.02)
+                //发布器
+                .Subscribe(e => {
+                    int i = 0;
+                    foreach(var item in e.Item1)
+                    {
+                        Console.WriteLine($"{i}----{item}----{e.Item2}");
+                        i++;
+                    }
+                });
+            Task.Run(()=> {
+                wt.OnWeigh(16.201);
+                wt.OnWeigh(16.202);
+                wt.OnWeigh(16.203);
+                wt.OnWeigh(16.201);
+                wt.OnWeigh(26.202);
+                wt.OnWeigh(16.203);
+                wt.OnWeigh(16.201);
+                wt.OnWeigh(16.202);
+                wt.OnWeigh(16.203);
+
+                wt.OnWeigh(16.212);
+                wt.OnWeigh(16.213);
+                wt.OnWeigh(26.211);
+                wt.OnWeigh(16.212);
+                wt.OnWeigh(16.213);
+                wt.OnWeigh(16.211);
+                wt.OnWeigh(16.212);
+                wt.OnWeigh(16.213);
+                wt.OnWeigh(16.212);
+                wt.OnWeigh(16.213);
+                wt.OnWeigh(16.212);
+                wt.OnWeigh(16.212);
+                wt.OnWeigh(16.212);
+                wt.OnWeigh(16.212);
+
+
+            });
+        }
+
+        public static void EventTostream()
+        {
+            Speaker sp = new Speaker();
+            var progressReports = Observable.FromEvent(hander => sp.Speak += hander, hander => sp.Speak -= hander);
+            progressReports.Buffer(2).Subscribe(e=>Console.WriteLine(123));
+            Task.Run(() => {
+                sp.OnSpeak();
+            });
+
+        }
+
         public static void DifferenceBetweenSubscribeOnAndObserveOn()
         {
             Thread.CurrentThread.Name = "Main";
@@ -167,6 +229,32 @@ namespace RX
         public void OutputMsg(string msg)
         {
             Console.WriteLine($"当前线程ID[{Thread.CurrentThread.ManagedThreadId.ToString()}] {msg}");
+        }
+       
+    }
+    public class Speaker
+    {
+        public event Action Speak;
+        public void OnSpeak()
+        {
+            Speak();
+        }
+    }
+    public class Weight
+    {
+        private Queue<double>datas = new Queue<double>();
+        public event Action<Queue<double>> Weigh;
+        public Weight()
+        {
+        }
+        public void OnWeigh(double w)
+        {
+            datas.Enqueue(w);
+            if (datas.Count >= 10)
+            {
+                Weigh(datas);
+                datas.Dequeue();
+            }
         }
     }
 }
